@@ -35,14 +35,10 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    margin: 0;
-    color: var(--secondary-white);
-    font-size: 1.4rem;
-}
-.logo-link {
-    text-decoration: none;
-    color: var(--secondary-blue);
+.logo-link img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .main-nav ul {
@@ -62,6 +58,19 @@ body {
 
 .main-nav a:hover {
     opacity: 0.7;
+}
+
+.team-img {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+.team-img img {
+    max-width: 1000px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 600px) {
