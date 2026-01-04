@@ -266,3 +266,67 @@ body {
         flex-wrap: wrap;
     }
 }
+
+.vorstand-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.vorstand-section h1 {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Grid */
+.vorstand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Karten */
+.vorstand-card {
+    background-color: var(--secondary-white);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.vorstand-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Text */
+.vorstand-card h3 {
+    margin: 0.5rem 0 0.2rem;
+    color: var(--primary-blue);
+}
+
+.vorstand-card .role {
+    font-weight: 600;
+    color: var(--primary-pink);
+    margin-bottom: 0.8rem;
+}
+
+.vorstand-card .bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--primary-blue);
+}
