@@ -318,9 +318,21 @@ body {
 }
 
 .vorstand-card .bio {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+    padding-left: 3rem;
+    margin: 1rem 0 0;
+    text-align: left;
 }
+
+.vorstand-card .bio li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--primary-blue);
+}
+
+
 
 .section-intro {
     max-width: 700px;
