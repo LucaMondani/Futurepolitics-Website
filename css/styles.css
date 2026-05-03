@@ -284,7 +284,7 @@ body {
 /* Grid */
 .vorstand-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
 
@@ -341,4 +341,16 @@ body {
     line-height: 1.7;
     font-size: 1rem;
     color: var(--primary-blue);
+}
+
+@media (max-width: 900px) {
+    .vorstand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .vorstand-grid {
+        grid-template-columns: 1fr;
+    }
 }
