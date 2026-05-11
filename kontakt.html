@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Future Politics</title>
+        <title>Kontakt – Future Politics</title>
         <link rel="stylesheet" href="https://use.typekit.net/ubp1uxt.css">
-        <link rel="icon" href="./assets/logos/FP_Tertiärlogo.svg">
+        <link rel="icon" href="./assets/logos/FP_Tertiärlogo.svg">
         <link rel="stylesheet" href="./css/styles.css">
     </head>
     <body>
@@ -23,7 +23,53 @@
             </div>
         </header>
         <main>
-            
+            <section class="kontakt-section">
+                <h1>Kontakt</h1>
+                <p class="section-intro">Du hast Fragen, möchtest mit uns zusammenarbeiten oder einfach mehr erfahren? Meld dich – wir freuen uns von dir zu hören!</p>
+
+                <div id="form-success" class="form-message form-success" style="display:none;">Nachricht gesendet! Wir melden uns bald.</div>
+                <div id="form-error" class="form-message form-error" style="display:none;">Etwas ist schiefgelaufen. Bitte versuch es erneut oder schreib uns direkt per E-Mail.</div>
+
+                <div class="kontakt-layout">
+                    <div class="kontakt-info">
+                        <h2>So erreichst du uns</h2>
+                        <ul class="kontakt-list">
+                            <li>
+                                <span class="kontakt-label">E-Mail</span>
+                                <a href="mailto:info@futurepolitics.de">info@futurepolitics.de</a>
+                            </li>
+                            <li>
+                                <span class="kontakt-label">Instagram</span>
+                                <a href="https://www.instagram.com/future.politics_/" target="_blank" rel="noopener">@future.politics_</a>
+                            </li>
+                            <li>
+                                <span class="kontakt-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/company/future-politics-ev/" target="_blank" rel="noopener">Future Politics e.V.</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="kontakt-form" action="mailer.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" placeholder="deine@email.de" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="betreff">Betreff</label>
+                            <input type="text" id="betreff" name="betreff" placeholder="Worum geht es?">
+                        </div>
+                        <div class="form-group">
+                            <label for="nachricht">Nachricht</label>
+                            <textarea id="nachricht" name="nachricht" rows="6" placeholder="Deine Nachricht..." required></textarea>
+                        </div>
+                        <button type="submit" class="kontakt-btn">Nachricht senden</button>
+                    </form>
+                </div>
+            </section>
         </main>
         <footer class="site-footer">
             <div class="footer-inner">
@@ -38,5 +84,13 @@
                 </nav>
             </div>
         </footer>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("success") === "1") {
+                document.getElementById("form-success").style.display = "block";
+            } else if (params.get("error") === "1") {
+                document.getElementById("form-error").style.display = "block";
+            }
+        </script>
     </body>
 </html>
