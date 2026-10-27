@@ -1,10 +1,19 @@
 <?php
 // --- SMTP-Konfiguration ---
-define('SMTP_HOST', 'fügeichnochein.kasserver.com');
-define('SMTP_USER', 'info@futurepolitics.de');
-define('SMTP_PASS', 'Nocherstellen');
-define('SMTP_PORT', 587);
-define('MAIL_TO', 'info@futurepolitics.de');
+// Zugangsdaten NICHT im Repo: mailer-config.php liegt OBERHALB des Doc-Roots
+// (Vorlage: mailer-config.example.php).
+$smtpConfigPath = dirname(__DIR__) . '/mailer-config.php';
+if (!is_readable($smtpConfigPath)) {
+    error_log('mailer: Konfiguration fehlt unter ' . $smtpConfigPath);
+    http_response_code(500);
+    exit('Kontaktformular ist derzeit nicht verfügbar.');
+}
+$smtpConfig = require $smtpConfigPath;
+define('SMTP_HOST', $smtpConfig['host']);
+define('SMTP_USER', $smtpConfig['user']);
+define('SMTP_PASS', $smtpConfig['pass']);
+define('SMTP_PORT', (int)($smtpConfig['port'] ?? 587));
+define('MAIL_TO', $smtpConfig['mail_to'] ?? $smtpConfig['user']);
 // --------------------------
 
 use PHPMailer\PHPMailer\PHPMailer;
